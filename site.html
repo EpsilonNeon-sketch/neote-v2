@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neote Plus IDE Simulator 2</title>
+    <title>Neote IDE</title>
     <link rel='manifest' href='manifest.json'>
     <link rel="icon" href="./neote logo.png">
 
@@ -1058,6 +1058,620 @@
 
             .home-content {
                 padding: 30px 20px;
+            }
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+
+            /* Main layout adjustments */
+            body {
+                font-size: 14px;
+                overflow-x: hidden;
+            }
+
+            #ide-main {
+                flex-direction: column;
+                height: 100vh;
+            }
+
+            /* Sidebar adjustments */
+            #sidebar {
+                width: 100%;
+                height: auto;
+                max-height: 30vh;
+                overflow-y: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            /* File explorer */
+            #file-explorer {
+                padding: 8px;
+            }
+
+            .file-item {
+                padding: 8px 12px;
+                font-size: 14px;
+                min-height: 44px;
+                /* Touch-friendly height */
+            }
+
+            /* Main editor area */
+            #main-content {
+                flex: 1;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Code editor container */
+            #editor-container {
+                flex: 1;
+                min-height: 200px;
+                max-height: 40vh;
+            }
+
+            #code-editor {
+                font-size: 12px;
+                line-height: 1.5;
+                padding: 8px;
+            }
+
+            #line-numbers {
+                font-size: 12px;
+                line-height: 1.5;
+                padding: 8px 4px;
+                min-width: 40px;
+            }
+
+            /* Bottom panels */
+            #bottom-panels {
+                height: 40vh;
+                flex-direction: column;
+            }
+
+            #tabs {
+                flex-wrap: wrap;
+                height: auto;
+                min-height: 40px;
+                padding: 4px;
+            }
+
+            .tab {
+                font-size: 12px;
+                padding: 6px 10px;
+                min-height: 36px;
+                margin: 2px;
+            }
+
+            .tab-close {
+                width: 16px;
+                height: 16px;
+                margin-left: 6px;
+            }
+
+            /* Panel content */
+            .panel-content {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            /* Buttons and controls */
+            button {
+                min-height: 44px;
+                padding: 10px 16px;
+                font-size: 14px;
+                margin: 4px;
+            }
+
+            .icon-btn {
+                min-width: 44px;
+                min-height: 44px;
+                padding: 10px;
+            }
+
+            /* Modal adjustments */
+            .modal {
+                width: 95%;
+                max-width: none;
+                margin: 10px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .modal-header {
+                padding: 16px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .modal-header h2 {
+                margin-bottom: 8px;
+            }
+
+            .modal-content {
+                padding: 16px;
+            }
+
+            .modal-footer {
+                padding: 16px;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .modal-footer button {
+                width: 100%;
+                margin: 0;
+            }
+
+            /* Input fields */
+            input,
+            textarea,
+            select {
+                font-size: 16px;
+                /* Prevents zoom on iOS */
+                padding: 12px;
+                min-height: 44px;
+                margin: 8px 0;
+            }
+
+            /* Terminal output */
+            #output-panel,
+            #terminal-panel,
+            #problems-panel {
+                font-size: 11px;
+                line-height: 1.4;
+                padding: 8px;
+            }
+
+            /* Variable viewer */
+            #variable-viewer {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .variable-item {
+                padding: 8px;
+                margin: 4px 0;
+            }
+
+            /* Extension cards */
+            .extension-card {
+                margin: 8px;
+                padding: 12px;
+            }
+
+            .extension-card h3 {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+
+            /* File tabs - make them scrollable horizontally */
+            #tabs-container {
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            #tabs {
+                display: inline-flex;
+                min-width: 100%;
+            }
+
+            /* Context menu adjustments */
+            .context-menu {
+                font-size: 14px;
+                min-width: 150px;
+            }
+
+            .context-menu-item {
+                padding: 12px 16px;
+                min-height: 44px;
+            }
+
+            /* Splitter adjustments */
+            .splitter {
+                width: 100%;
+                height: 4px;
+                cursor: row-resize;
+            }
+
+            .splitter-vertical {
+                width: 4px;
+                height: 100%;
+                cursor: col-resize;
+            }
+
+            /* Ensure panels don't get too small */
+            .panel {
+                min-height: 150px;
+            }
+
+            /* Adjust chart containers */
+            canvas {
+                max-height: 250px !important;
+            }
+
+            /* Media elements */
+            img,
+            video {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Tables */
+            table {
+                font-size: 12px;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            th,
+            td {
+                padding: 8px;
+                min-width: 80px;
+            }
+
+            /* Forms */
+            form {
+                padding: 8px;
+            }
+
+            .form-group {
+                margin-bottom: 16px;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 4px;
+                font-weight: 600;
+            }
+
+            /* Alert boxes */
+            .alert {
+                padding: 12px;
+                margin: 8px 0;
+                font-size: 14px;
+            }
+
+            /* Tooltips */
+            [title] {
+                position: relative;
+            }
+
+            /* Loading spinner adjustments */
+            .spinner {
+                width: 40px;
+                height: 40px;
+                border-width: 3px;
+            }
+
+            /* Dropdown menus */
+            .dropdown {
+                position: relative;
+            }
+
+            .dropdown-content {
+                width: 100%;
+                max-height: 200px;
+                overflow-y: auto;
+            }
+
+            /* Pagination */
+            .pagination {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .pagination button {
+                margin: 2px;
+                min-width: 36px;
+                min-height: 36px;
+            }
+
+            /* Code blocks */
+            pre {
+                font-size: 11px;
+                padding: 8px;
+                overflow-x: auto;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+
+            code {
+                font-size: 11px;
+                padding: 2px 4px;
+            }
+
+            /* Breadcrumb */
+            .breadcrumb {
+                flex-wrap: wrap;
+                padding: 8px;
+            }
+
+            .breadcrumb-item {
+                margin: 2px;
+            }
+
+            /* Progress bars */
+            .progress {
+                height: 20px;
+                margin: 8px 0;
+            }
+
+            /* Badges */
+            .badge {
+                font-size: 10px;
+                padding: 2px 6px;
+            }
+
+            /* Cards */
+            .card {
+                margin: 8px;
+                padding: 12px;
+            }
+
+            /* Lists */
+            .list-item {
+                padding: 12px;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            /* Navigation */
+            nav {
+                padding: 8px;
+            }
+
+            nav a {
+                padding: 10px;
+                display: block;
+                margin: 2px 0;
+            }
+
+            /* Footer */
+            footer {
+                padding: 16px 8px;
+                text-align: center;
+            }
+
+            /* Accordion */
+            .accordion-header {
+                padding: 12px;
+                font-size: 14px;
+                min-height: 44px;
+            }
+
+            .accordion-content {
+                padding: 12px;
+            }
+
+            /* Tabs (alternative) */
+            .tab-alt {
+                padding: 12px;
+                font-size: 14px;
+                min-height: 44px;
+            }
+
+            /* Search box */
+            .search-box {
+                width: 100%;
+                margin: 8px 0;
+            }
+
+            .search-box input {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            /* Floating action buttons */
+            .fab {
+                width: 56px;
+                height: 56px;
+                bottom: 16px;
+                right: 16px;
+            }
+
+            /* Grid layouts */
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            /* Flex layouts */
+            .flex-row {
+                flex-direction: column;
+            }
+
+            .flex-wrap {
+                flex-wrap: wrap;
+            }
+
+            /* Hide elements on mobile */
+            .desktop-only {
+                display: none !important;
+            }
+
+            /* Show mobile-specific elements */
+            .mobile-only {
+                display: block !important;
+            }
+
+            /* Adjust header */
+            #header {
+                padding: 8px 12px;
+                height: auto;
+                min-height: 56px;
+                flex-wrap: wrap;
+            }
+
+            #header-title {
+                font-size: 16px;
+                margin: 4px 0;
+            }
+
+            /* Adjust toolbar */
+            #toolbar {
+                flex-wrap: wrap;
+                padding: 4px;
+                gap: 4px;
+            }
+
+            .toolbar-btn {
+                min-width: 44px;
+                min-height: 44px;
+                padding: 8px;
+                margin: 2px;
+            }
+
+            /* Status bar */
+            #status-bar {
+                padding: 4px 8px;
+                font-size: 11px;
+                flex-wrap: wrap;
+                height: auto;
+                min-height: 24px;
+            }
+
+            .status-item {
+                margin: 2px 4px;
+            }
+
+            /* Ensure proper scrolling */
+            * {
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Prevent horizontal overflow */
+            .container,
+            .wrapper,
+            .panel {
+                overflow-x: hidden;
+            }
+
+            /* Touch-friendly hover states */
+            button:hover,
+            .tab:hover,
+            .file-item:hover {
+                background-color: var(--hover-color);
+                transition: background-color 0.2s ease;
+            }
+
+            /* Active states for touch */
+            button:active,
+            .tab:active,
+            .file-item:active {
+                background-color: var(--active-color);
+                transform: scale(0.98);
+            }
+
+            /* Adjust z-index for proper layering */
+            .modal {
+                z-index: 10000;
+            }
+
+            .dropdown-content {
+                z-index: 9999;
+            }
+
+            .context-menu {
+                z-index: 9998;
+            }
+
+            /* Improve readability */
+            .panel-content {
+                line-height: 1.5;
+            }
+
+            /* Reduce animations on mobile for better performance */
+            * {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            /* Ensure images don't cause overflow */
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        /* Small phones (portrait) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 13px;
+            }
+
+            #code-editor {
+                font-size: 11px;
+            }
+
+            #line-numbers {
+                font-size: 11px;
+            }
+
+            .tab {
+                font-size: 11px;
+                padding: 4px 8px;
+            }
+
+            button {
+                font-size: 13px;
+            }
+
+            .modal {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                max-height: 100vh;
+            }
+
+            .panel-content {
+                font-size: 11px;
+            }
+
+            #output-panel,
+            #terminal-panel,
+            #problems-panel {
+                font-size: 10px;
+            }
+        }
+
+        /* Landscape orientation */
+        @media (max-width: 768px) and (orientation: landscape) {
+            #sidebar {
+                max-height: 20vh;
+            }
+
+            #bottom-panels {
+                height: 35vh;
+            }
+
+            #editor-container {
+                max-height: 45vh;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+
+            /* Ensure crisp rendering on retina displays */
+            canvas {
+                image-rendering: crisp-edges;
+                image-rendering: -webkit-crisp-edges;
             }
         }
     </style>
@@ -5497,6 +6111,61 @@ divider()`
                 navigator.serviceWorker.register("/sw.js");
             });
         }
+        /* Epsilon Neote - Anti-Small Screen Protocol 
+    Blocks mobile AND small browser windows.
+ */
+        (function () {
+            const MIN_WIDTH = 1024; // Standard laptop width
+
+            function enforceDesktopOnly() {
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                const isSmallScreen = window.innerWidth < MIN_WIDTH;
+
+                if (isMobile || isSmallScreen) {
+                    // Nuke the UI and show the restriction screen
+                    document.body.innerHTML = `
+                <div style="
+                    height: 100vh; width: 100vw;
+                    display: flex; flex-direction: column; 
+                    align-items: center; justify-content: center; 
+                    background: #0f0f0f; color: #e0e0e0; 
+                    font-family: 'Inter', sans-serif; text-align: center; 
+                    padding: 40px; position: fixed; top: 0; left: 0; z-index: 99999;
+                ">
+                    <div style="font-size: 60px; margin-bottom: 20px;">🖥️</div>
+                    <h1 style="color: #9333ea; font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px;">
+                        DESKTOP EXCLUSIVE
+                    </h1>
+                    <p style="color: #a0a0a0; max-width: 450px; font-size: 1.1rem; line-height: 1.6;">
+                        Neote IDE requires a larger workspace. Please use a <b>Laptop or PC</b> 
+                        and maximize your window to continue building the Epsilon empire.
+                    </p>
+                    <div style="
+                        margin-top: 40px; padding: 12px 24px; 
+                        border: 1px solid #333; border-radius: 8px; 
+                        font-size: 11px; color: #707070;
+                        text-transform: uppercase; letter-spacing: 2px;
+                    ">
+                        Current Width: ${window.innerWidth}px | Required: ${MIN_WIDTH}px+
+                    </div>
+                </div>
+            `;
+                    // Stop any code from running in the background
+                    window.stop();
+                }
+            }
+
+            // Run on start
+            enforceDesktopOnly();
+
+            // Catch them if they try to shrink the window
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < MIN_WIDTH) {
+                    location.reload(); // Refresh to trigger the lockout
+                }
+            });
+        })();
+
     </script>
 </body>
 
